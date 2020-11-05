@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Items = function (props) {
-
   return (
     <div id="list">
       {props.data.map((result, i, array) => <div onClick={()=>props.click(i, result.id, array)} className="result" key={result.id}>

@@ -2,6 +2,9 @@ import React from 'react';
 import List from './list.jsx'
 import axios from 'axios'
 import lodash from 'lodash'
+import Api from './api.js';
+import DropDown from './dropDown.jsx'
+
 
 
 class Form extends React.Component {
@@ -10,14 +13,28 @@ class Form extends React.Component {
 
     this.state = {
       query: '',
-      feature: ''
+      feature: '',
+      api: [],
+      trigger: 0
     };
     this.handleSearchChange = this.handleSearchChange.bind(this);
     this.handleAddChange = this.handleAddChange.bind(this);
     this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
     this.handleAddSubmit = this.handleAddSubmit.bind(this);
+    this.callBack = this.callBack.bind(this);
+
+
   }
 
+  fetch(value) {
+    Api.get(value)
+    .then((response)=> {
+      this.setState({
+        api: response.data
+      })
+    })
+    // .then(()=>{console.log(this.state.api.results)})
+  }
   handleSearchSubmit(e) {
     e.preventDefault()
   }
@@ -41,10 +58,18 @@ class Form extends React.Component {
     })
     if (!this.debouncedFn) {
       this.debouncedFn = _.debounce(() => {
-        this.props.fetch(event.target.value)
+        this.fetch(event.target.value)
       }, 300)
     }
     this.debouncedFn();
+  }
+
+  callBack() {
+    this.setState({
+      feature: '',
+      api: []
+    })
+
   }
   render() {
 
@@ -58,7 +83,9 @@ class Form extends React.Component {
           <input name="query" onChange={this.handleSearchChange} placeholder="search..." value={this.state.query} />
           <button id="searchButton" >Go!</button>
         </form>
+        {(this.state.api.results) && (!this.state.trigger) ? <DropDown cb={this.callBack} data={this.state.api.results} click={this.props.movieClick}/> : <div></div>}
       </div>
+
     )
   }
 }

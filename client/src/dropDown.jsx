@@ -1,10 +1,9 @@
 import React from 'react';
 
 const DropDown = function (props) {
-  console.log(props)
   return (
     <div id="dropDown">
-      {props.data.map((result, i) => <div onClick={()=>props.click(i)} className="result" key={result.id}>
+      {props.data.map((result) => <div onClick={()=>props.click(result, props.cb)} className="result" key={result.id}>
         <div className="title">
           {result.title}
         </div>

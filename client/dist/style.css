@@ -3,12 +3,13 @@ body {
   margin: 50px
 }
 #dropDown {
-    flex-direction: column;
-    max-height: 100%;
-    width: 408px;
-    overflow-y: scroll;
-    position: fixed;
-    background: bottom;
+  flex-direction: column;
+  max-height: 100%;
+  width: 408px;
+  overflow-y: scroll;
+  position: absolute;
+  background: bottom;
+  margin-top: 940px;
 }
 .result {
   display: flex;
@@ -72,7 +73,7 @@ body {
   flex-direction: row;
 }
 .container {
-  height: 65px;
+  height: 50px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -99,9 +100,8 @@ body {
 #search {
   order: 3;
   align-self: flex-end;
-  position: fixed;
   top: 156px;
-  margin: auto 4em auto auto;
+  margin: 0px 4em -37px auto;
 }
 #app {
   margin: 0 auto;
@@ -110,6 +110,7 @@ body {
 }
 #list {
   flex-direction: column;
-    max-height: 695px;
-    width: 408px;
+  max-height: 695px;
+  width: 408px;
+  position: initial;
 }
