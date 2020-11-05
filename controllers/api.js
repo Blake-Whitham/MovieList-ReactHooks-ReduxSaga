@@ -8,11 +8,15 @@ module.exports = {
         'headers': {
             'content-type':'text/plain',
         },
-        // 'params': {
+        // query: {
         //     'search':'parameter',
         // },
     })
 }
+
+//
+
+
 // , (err, data) => {
 //   if (err) {
 //     console.log(err)
