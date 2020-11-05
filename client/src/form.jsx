@@ -1,6 +1,7 @@
 import React from 'react';
 import List from './list.jsx'
 import axios from 'axios'
+import lodash from 'lodash'
 
 
 class Form extends React.Component {
@@ -33,12 +34,18 @@ class Form extends React.Component {
       [e.target.name]: e.target.value
     }, this.props.filter(e.target.value))
   }
-  handleAddChange(e) {
+  handleAddChange(event) {
+    event.persist();
     this.setState({
-      [e.target.name]: e.target.value
+      [event.target.name]: event.target.value
     })
+    if (!this.debouncedFn) {
+      this.debouncedFn = _.debounce(() => {
+        this.props.fetch(event.target.value)
+      }, 300)
+    }
+    this.debouncedFn();
   }
-  // debounce(()=>this.handleChange)
   render() {
 
     return (

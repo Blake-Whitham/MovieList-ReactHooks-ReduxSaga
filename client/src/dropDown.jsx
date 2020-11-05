@@ -1,13 +1,12 @@
 import React from 'react';
 
-const Items = function (props) {
-
+const DropDown = function (props) {
+  console.log(props)
   return (
-    <div id="list">
-      {props.data.map((result, i, array) => <div onClick={()=>props.click(i, result.id, array)} className="result" key={result.id}>
+    <div id="dropDown">
+      {props.data.map((result, i) => <div onClick={()=>props.click(i)} className="result" key={result.id}>
         <div className="title">
           {result.title}
-          <div className="label">{result.watched ? <button className="watched">Watched</button> : ''}</div>
         </div>
         <div className="description">
           {result.overview}
@@ -21,4 +20,5 @@ const Items = function (props) {
   )
 }
 
-export default Items
+export default DropDown;
+

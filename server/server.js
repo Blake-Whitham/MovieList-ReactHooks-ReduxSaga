@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path')
 const app = express();
 const contDB = require('../controllers/db.js')
+const contAPI = require('../controllers/api.js')
 
 
 const port = 8000;
@@ -10,6 +11,7 @@ app.use(express.static(distrobution))
 app.use(express.json());
 
 app.get('/movies', contDB.get)
+app.get('/api', contAPI.get)
 
 app.post('/movies', contDB.post)
 

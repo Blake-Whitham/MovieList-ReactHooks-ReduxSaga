@@ -1,3 +1,51 @@
+body {
+  background-color: whitesmoke;
+  margin: 50px
+}
+#dropDown {
+    flex-direction: column;
+    max-height: 100%;
+    width: 408px;
+    overflow-y: scroll;
+    position: fixed;
+    background: bottom;
+}
+.result {
+  display: flex;
+  flex-wrap: wrap;
+  border: black;
+  border-style: double;
+  border-radius: 5px;
+  margin-top: 5px;
+  background-color: snow;
+  padding: 3px;
+}
+.title {
+  order: 1;
+  align-self: flex-start;
+  width: 100%;
+}
+.description {
+  order: 4;
+  max-width: fit-content;
+  text-overflow: ellipsis;
+}
+.date {
+  order: 2;
+  width: 100%;
+}
+.image {
+  order: 3;
+  /* flex-grow: 1; */
+  /* flex-basis: auto; */
+  /* position: sticky; */
+  /* align-self: flex-start; */
+  /* min-height: 40px; */
+  /* min-width: 40px; */
+  max-height: 100px;
+}
+
+
 .movies{
   height: 25px;
   width: 400px;
@@ -59,17 +107,9 @@
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  background-color: whitesmoke;
-
 }
 #list {
-  justify-content: center;
-  height: 400px;
-  width: 410px;
-  display: flex;
   flex-direction: column;
-  justify-content: start;
-  overflow-y: scroll;
-  align-items: center;
-  flex: content;
+    max-height: 695px;
+    width: 408px;
 }
