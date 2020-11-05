@@ -1,0 +1,39 @@
+{
+  "name": "movie-list",
+  "version": "1.0.0",
+  "description": "movie api app",
+  "main": "index.JSX",
+  "scripts": {
+    "start": "nodemon server/server.js",
+    "watch": "webpack -d -w "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Blake-Whitham/hrsf131-movie-list.git"
+  },
+  "keywords": [
+    "Movie",
+    "api"
+  ],
+  "author": "Blake",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Blake-Whitham/hrsf131-movie-list/issues"
+  },
+  "homepage": "https://github.com/Blake-Whitham/hrsf131-movie-list#readme",
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.23.0",
+    "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "express": "^4.15.0",
+    "mysql": "^2.16.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "axios": "0.20.0",
+    "lodash": "4.17.20"
+  }
+}
