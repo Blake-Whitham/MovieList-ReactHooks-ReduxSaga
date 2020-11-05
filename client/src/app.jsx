@@ -109,7 +109,7 @@ class App extends React.Component {
     array[index].watched = !array[index].watched
     this.patch(array[index])
   }
-
+//-------------------------> Transfer DropDown Comp to Form Comp to reset querystring upon DropDown click event <---------\\
   render() {
     return (
       <div id="content">
