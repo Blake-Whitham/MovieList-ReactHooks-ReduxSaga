@@ -4,8 +4,8 @@
   "description": "movie api app",
   "main": "index.JSX",
   "scripts": {
-    "start": "nodemon server/server.js",
-    "watch": "webpack -d -w "
+    "start": "nodemon server",
+    "build": "webpack -w "
   },
   "repository": {
     "type": "git",
