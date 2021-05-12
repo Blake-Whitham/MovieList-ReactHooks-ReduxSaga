@@ -4,8 +4,7 @@ const app = express();
 
 
 const port = 8000;
-const dist = path.join(__dirname,'..','client/dist')
-app.use(express.static(dist))
+app.use(express.static('./dist'))
 
 app.listen(port, (err) => {
   if (err) {
