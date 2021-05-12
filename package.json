@@ -23,6 +23,7 @@
   "homepage": "https://github.com/Blake-Whitham/hrsf131-movie-list#readme",
   "devDependencies": {
     "@babel/core": "^7.14.2",
+    "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.14.2",
     "@babel/preset-react": "^7.13.13",
     "babel-loader": "^8.2.2",
