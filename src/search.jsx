@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux'
 import { searchMovies } from './redux/actions'
 
-const Form = ({ searchMovies }) => {
-  console.log(searchMovies)
+const Search = ({ searchMovies }) => {
+
   const [query, setQuery] = useState('')
 
   function handleSubmit(e) {
@@ -32,4 +32,4 @@ const Form = ({ searchMovies }) => {
   )
 }
 
-export default connect(null, { searchMovies })(Form)
+export default connect(null, { searchMovies })(Search)

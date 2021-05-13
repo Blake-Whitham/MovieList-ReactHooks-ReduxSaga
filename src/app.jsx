@@ -5,20 +5,20 @@ import React, { useState } from 'react';
 //Components
 import MovieList from './movieList.jsx';
 
-import Form from './form.jsx'
-//reducers
-// import { searchMovies } from '../redux/reducers'
+import AddMovie from './addMovie.jsx'
+import Search from './search.jsx'
+
 //########  APPLICATION  #########//
 
 const App = () => {
   return (
-    <>
-      <Form
-        // searchMovies={(query)=>action(searchMovies(query))}
-      />
-      <br/>
-      <MovieList data={{}}/>
-    </>
+    <div style={{'display': 'flex', 'flexDirection': 'column' }} >
+      <AddMovie />
+      <br />
+      <Search />
+      <br />
+      <MovieList />
+    </div>
   )
 }
 // store.subscribe(App)
