@@ -1,5 +1,5 @@
 // import data from '../data.js'
-import { ADD_MOVIE, CHANGE_WATCHED, SEARCH } from '../actionTypes.js'
+import { ADD_MOVIE, SEARCH, TOGGLE_WATCHED } from '../actionTypes.js'
 
 
 const initialState = {
@@ -27,7 +27,7 @@ export default function (state = initialState, action) {
       arr[payload] = { title: payload, watched: false }
       return { movies : arr }
 
-    case CHANGE_WATCHED:
+    case TOGGLE_WATCHED:
       arr[payload].watched = !arr[payload].watched;
       return { movies : arr }
 

@@ -1,4 +1,4 @@
-import { ADD_MOVIE, CHANGE_WATCHED, SEARCH } from './actionTypes.js';
+import { ADD_MOVIE, SEARCH, TOGGLE_WATCHED } from './actionTypes.js';
 
 export function searchMovies(query) {
   return {
@@ -14,9 +14,9 @@ export function addMovie(movie) {
   }
 }
 
-export function changeWatched(title) {
+export function toggleWatched(title) {
   return {
-    type: CHANGE_WATCHED,
+    type: TOGGLE_WATCHED,
     payload: title,
   }
 }

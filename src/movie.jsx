@@ -2,19 +2,19 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
-import { changeWatched } from './redux/actions.js'
+import { toggleWatched } from './redux/actions.js'
 
-const Movie = ({ movie, watched, idx, changeWatched }) => {
+const Movie = ({ movie, watched, toggleWatched }) => {
 
 
   return (
     <div className='movies'>
       {movie}
       {<button
-        onClick={()=>changeWatched(movie)}
+        onClick={()=>toggleWatched(movie)}
       >{watched ? 'Watched': 'To Watch'}</button>}
     </div>
   )
 }
 
-export default connect(null, { changeWatched })(Movie);
+export default connect(null, { toggleWatched })(Movie);
