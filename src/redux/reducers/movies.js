@@ -7,10 +7,14 @@ const initialState = {
 }
 
 export default function(state = initialState, action) {
+  const { movies } = state
+  const { payload } = action
+
   switch (action.type) {
     case SEARCH:
-      // console.log(action)
-      return { movies: search(data, action.payload) };
+      let filtered = movies.slice().filter((movie) => movie.title.toLowerCase().includes(payload))
+      if (filtered.length < 1) return initialState
+      return { movies: filtered };
     default:
       return state;
   }
